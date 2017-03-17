@@ -53,7 +53,15 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bulk_insert'
 gem 'rack-mini-profiler'
+
+# tools for searching
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
+# tool for search on Redis
 gem 'searchkick'
+
+# redis tools
 gem 'redis', '~>3.2'
+
+# attributes virtualization
+gem 'virtus'
