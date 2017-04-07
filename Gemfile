@@ -65,3 +65,4 @@ gem 'redis', '~>3.2'
 
 # attributes virtualization
 gem 'virtus'
+gem 'handlebars_assets'

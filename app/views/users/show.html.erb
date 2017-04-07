@@ -7,3 +7,21 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<br>
+<%= '*'* 200 %>
+<br>
+
+<%= form_for @post do |f| %>
+  <%= f.text_field 'title' %><br>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <br>
+  <%= f.submit 'save', id: 'create_post' %>
+<% end %>
+
+<%= '*' * 200 %>
+
+<div class="posts_list"></div>
+
+<script>
+    $(load_to_show_page(<%= @user.id %>));
+</script>
