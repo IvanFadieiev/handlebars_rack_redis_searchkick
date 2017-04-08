@@ -1,3 +1,5 @@
+<%= javascript_tag "load_to_show_page(#{@user.id})" %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -22,6 +24,3 @@
 
 <div class="posts_list"></div>
 
-<script>
-    $(load_to_show_page(<%= @user.id %>));
-</script>

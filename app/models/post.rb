@@ -1,12 +1,14 @@
-require 'elasticsearch/model'
+# require 'elasticsearch/model'
 
 class Post < ApplicationRecord
   # include Elasticsearch::Model
   # include Elasticsearch::Model::Callbacks
-  searchkick
+  # searchkick
 
-  belongs_to :user
   has_many :comments
+  belongs_to :user
+
+  default_scope { order(created_at: :desc) }
 
   def self.for qqq
     where("posts.title ILIKE ?", "%#{qqq}%").first(20)

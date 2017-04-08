@@ -45,8 +45,7 @@ class UsersController < ApplicationController
   end
 
   def user_posts
-    data = posts_list(params[:id])
-    render json: data, status: 200
+    @data = posts_list(params[:id])
   end
 
   private

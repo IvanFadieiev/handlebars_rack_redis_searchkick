@@ -5,27 +5,29 @@
 //= require users
 //= require handlebars
 
-var new_post = function(post){
+function new_post(post){
     var data = HandlebarsTemplates['posts/show'](post);
     $('.AZAZA').prepend(data);
-}
+};
 
-var load_to_show_page = function(id){
+function load_to_show_page(id){
     $(function(){
         $.ajax({
             url: '/user_posts',
             data: {id: id},
             success: function(data){
-                posts_list(data);
+                posts_list({posts: data});
             },
             error: function(){
                 alert('Error(((')
             }
         })
     })
-}
+};
 
-var posts_list = function(posts){
+function posts_list(parameters){
+    var posts = parameters.posts;
     var data = HandlebarsTemplates['posts/index']({posts: posts});
     $('.posts_list').html(data);
 };
+
