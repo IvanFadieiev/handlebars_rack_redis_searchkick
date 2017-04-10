@@ -10,7 +10,7 @@ $(function(){
                 type: 'POST',
                 data: $('#new_post').serialize()
             }).done(function(data){
-                var a = new_post(data);
+                new_post(data);
                 post_title_selector.val('');
                 post_title_selector.focus();
             }).fail(function(){
